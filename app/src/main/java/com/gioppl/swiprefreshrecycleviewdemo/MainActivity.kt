@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         refreshable_view!!.setOnRefreshListener(1,object : RefreshableViewList.RefreshCallBack{
             override fun onRefresh() {
                 Thread(Runnable {
-                    Thread.sleep(3000)
+                    Thread.sleep(1000)
                     refreshable_view!!.finishRefresh()
                 }).start()
 

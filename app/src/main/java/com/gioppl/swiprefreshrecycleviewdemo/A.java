@@ -1,8 +1,10 @@
 package com.gioppl.swiprefreshrecycleviewdemo;
 
 public class A {
-    static {
-        System.out.println("static");
+    public A(int i,String b){
+        System.out.println(b+i);
     }
-
+    public A(int i){
+        System.out.println(i);
+    }
 }
