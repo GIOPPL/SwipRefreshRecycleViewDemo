@@ -53,7 +53,7 @@ class RefreshableViewList(context: Context?, attrs: AttributeSet?) : LinearLayou
         backImage=typeArray.getDrawable(R.styleable.RefreshableViewList_background_image)
         centerImage=typeArray.getDrawable(R.styleable.RefreshableViewList_center_image)
         recyclerViewIndex=typeArray.getInt(R.styleable.RefreshableViewList_list_index,0)
-
+        log("在加载时index：$recyclerViewIndex")
         header = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh, null, true)
         orientation = VERTICAL
         iv_triangle = header.findViewById(R.id.iv_triangle)
@@ -72,7 +72,8 @@ class RefreshableViewList(context: Context?, attrs: AttributeSet?) : LinearLayou
             headerLayoutParams = header.layoutParams as MarginLayoutParams
             touchSlop = ViewConfiguration.get(context).scaledTouchSlop
             headerLayoutParams!!.topMargin = hideHeaderHeight
-            rv_main = getChildAt(1) as RecyclerView
+            log("在设置时index：$recyclerViewIndex")
+            rv_main = getChildAt(recyclerViewIndex) as RecyclerView
             rv_main!!.setOnTouchListener(this)
             header.layoutParams = headerLayoutParams
             firstHideHead = !firstHideHead

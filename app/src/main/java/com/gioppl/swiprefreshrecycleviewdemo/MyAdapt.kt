@@ -16,6 +16,12 @@ class MyAdapt(private var mList: ArrayList<ClassifyButtonInfo>, private var cont
 
     override fun onBindViewHolder(holder: MyFruitViewHolder, position: Int) {
         holder.tv_variety!!.text=mList[position].classifyNum.toString()
+        holder.tv_variety!!.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(v: View?) {
+                mList[position].classifyNum++
+                holder.tv_variety!!.text=mList[position].classifyNum.toString()
+            }
+        })
     }
 
     class MyFruitViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,7 +32,6 @@ class MyAdapt(private var mList: ArrayList<ClassifyButtonInfo>, private var cont
         init {
             tv_variety = itemView.findViewById(R.id.tv_variety);
             ll_classify = itemView.findViewById(R.id.ll_classify)
-            view=itemView.findViewById(R.id.view)
         }
     }
 
