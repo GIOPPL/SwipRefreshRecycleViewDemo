@@ -4,16 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.gioppl.swiprefreshrecycleviewdemo.HorizontalSwipLinearLayout
+    <com.gioppl.swiprefreshrecycleviewdemo.HorizontalSlideLinearLayout
         android:layout_width="match_parent"
+        android:clickable="true"
         android:orientation="horizontal"
         android:layout_height="match_parent">
-        <Button
+        <TextView
+            android:clickable="true"
+            android:gravity="center"
             android:background="#2196F3"
             android:id="@+id/btn_variety"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="你好"
             android:textColor="#fff"/>
-    </com.gioppl.swiprefreshrecycleviewdemo.HorizontalSwipLinearLayout>
+    </com.gioppl.swiprefreshrecycleviewdemo.HorizontalSlideLinearLayout>
 </LinearLayout>

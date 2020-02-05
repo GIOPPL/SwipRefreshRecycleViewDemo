@@ -112,8 +112,6 @@ class RefreshableViewList(context: Context?, attrs: AttributeSet?) : LinearLayou
                         headerLayoutParams!!.topMargin = hideHeaderHeight
                         header.layoutParams = headerLayoutParams
                     }
-
-
                 }
                 MotionEvent.ACTION_UP ->{
                     if (distance>-pullLength){
